@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Budget</title>
+</head>
+<body onload="loadApp()">
+    <div class="header">
+        <div class="budget">
+            <div class="budget-title">
+                Available Budget
+            </div>
+            <div class="budget-value" id="budget"></div>
+            <div class="budget-entry cleanstyle">
+                <div class="budget-entry-text">Entry</div>
+                <div class="right">
+                    <div class="budget-entry-value" id="entries"></div>
+                    <div class="budget-entry-percentage">&nbsp;</div>
+                </div>
+            </div>
+            <div class="budget-egress cleanstyle">
+                <div class="budget-egress-text">Egress</div>
+                <div class="right cleanstyle">
+                    <div class="budget-egress-value" id="egress"></div>
+                    <div class="budget-egress-percentage" id="percentage">%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="form" onsubmit="return false;">
+        <div class="add">
+            <div class="add-container">
+                <select class="add-type" id="type">
+                    <option value="entry" selected>+</option>
+                    <option value="egress">-</option>
+                </select>
+                <input type="text" class="add-description" placeholder="Add Description"
+                id="description"/>
+                <input type="number" class="add-value" placeholder="Value" id="value" step="any"/>
+                <button class="add-button" onclick="addData()">
+                    <ion-icon name="checkmark-circle-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+
+
+
+    <div class="container cleanstyle">
+        <div class="entry">
+            <h2 class="entry-title" >Entry</h2>
+            <div id="list-entry">
+                <div class="element cleanstyle">
+                    <div class="element-description">Salary</div>
+                    <div class="right cleanstyle">
+                        <div class="element-value">+ 2.2000</div>
+                        <div class="element-delete">
+                            <button class="element-delete-btn" >
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="element cleanstyle">
+                    <div class="element-description">sell car</div>
+                    <div class="right cleanstyle">
+                        <div class="element-value">+ 1.2000</div>
+                        <div class="element-delete">
+                            <button class="element-delete-btn" >
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <div class="egress">
+            <h2 class="egress-title">Egress</h2>
+            <div id="list-egress">
+                <div class="element cleanstyle">
+                    <div class="element-description">Rent department</div>
+                    <div class="right cleanstyle">
+                        <div class="element-value"> - </div>
+                        <div class="element-percent">20%</div>
+                        <div class="element-delete">
+                            <button class="element-delete-btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="element cleanstyle">
+                    <div class="element-desc">Rent cellphone</div>
+                    <div class="right cleanstyle">
+                        <div class="element-value">-5000</div>
+                        <div class="element-percent">10%</div>
+                        <div class="element-delete">
+                            <button class="element-delete-btn">
+                                <ion-icon name="close-circle-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script src="js/Dato.js"></script>
+    <script src="js/Ingreso.js"></script>
+    <script src="js/Egreso.js"></script>
+    <script src="js/scritp.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
